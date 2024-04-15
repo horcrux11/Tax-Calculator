@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Div with Navbar</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="navbar-brand">
+    <div class="bubble-container">
+      <div class="bubble"></div> <!-- Bubble shape representing three dots -->
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="centered-div">
+    <div class="container mt-5">
+        <form id="taxForm">
+
+            <!-- Gross Annual Income -->
+            <div class="mb-1 p-0 position-relative">
+                <label for="grossIncome" class="form-label">Enter gross annual income
+                    <!-- Question Mark Icon -->
+                    <span class="question-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Gross annual income is your total salary in a year before any deductions.">❓</span>
+                </label>
+                <input type="text" class="form-control" id="grossIncome" aria-describedby="incomeHelp">
+                <!-- Error Icon -->
+                <span class="error-icon" id="errorIcon1" style="display: none;">❗</span>
+
+            </div>
+
+            <!-- Extra Income -->
+            <div class="mb-3 position-relative">
+                <label for="extraIncome" class="form-label">Enter extra income
+                    <!-- Question Mark Icon -->
+                    <span class="question-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Enter any additional income apart from your salary.">❓</span>
+                </label>
+                <input type="text" class="form-control" id="extraIncome">
+                <!-- Error Icon -->
+                <span class="error-icon" id="errorIcon2" style="display: none;">❗</span>
+
+            </div>
+
+            <!-- Age Group -->
+            <div class="mb-3 position-relative flex-column">
+              <div class="form-group">
+        <label for="ageGroup">Select your age group</label>
+         <span class="question-icon" data-toggle="tooltip" data-placement="top" title="Please select your age group.">❓</span>
+        <select class="form-control form-control-stretched" id="ageGroup">
+  <option value="" disabled selected>Select age group</option>
+  <option value="<40">&lt;40</option>
+  <option value="40-60">&ge;40 & &lt;60</option>
+  <option value="≥60">&ge;60</option>
+</select>
+                  
+                </div>
+                
+                <!-- Error Icon -->
+                <span class="error-icon" id="errorIcon3" style="display: none;">❗</span>
+
+            </div>
+
+            <!-- Total Applicable Deductions -->
+            <div class="mb-3 position-relative">
+                <label for="deductions" class="form-label">Enter total applicable deductions
+                    <!-- Question Mark Icon -->
+                    <span class="question-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Enter any deductions that apply to your income.">❓</span>
+                </label>
+                <input type="text" class="form-control" id="deductions">
+                <!-- Error Icon -->
+                <span class="error-icon" id="errorIcon4" style="display: none;">❗</span>
+
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" class="btn btn-primary w-100 p-2 " onclick="calculateTax()">Submit</button>
+        </form>
+    </div>
+
+    <!-- Add this modal structure to your existing HTML -->
+    <div class="modal fade" id="taxModal" tabindex="-1" aria-labelledby="taxModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taxModalLabel">Tax Calculation Result</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- The tax result will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

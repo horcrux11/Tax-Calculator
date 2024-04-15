@@ -1,0 +1,48 @@
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white; /* Set the background color of the whole page */
+    }
+    .navbar {
+      background-color: #dcdcdc;  /* Set the background color of the navbar */
+    }
+    .bubble {
+      width: 30px;
+      height: 30px;
+      background-color: #808080;/* Set the background color of the bubbles */
+      border-radius: 50%;
+      margin-right: 10px;
+      border: 2px solid #808080; /* Set the border color of the bubbles to match the navbar */
+    }
+    .bubble-container {
+      display: flex;
+    }
+    .centered-div {
+      width: 400px; /* Adjust width as needed */
+      height: 430px; /* Adjust height as needed */
+      background-color: white;
+      padding: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border:1px solid black;
+      margin: 100px 10px 20px 550px;
+    }
+    .error-icon {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        /* Custom styles for question mark icons */
+        .question-icon {
+            position: absolute;
+            cursor: help;
+        }
+        .btn-primary{
+          background-color: #7b68ee;
+        }
+  </style>
